@@ -1,0 +1,98 @@
+
+<script type="text/x-red" data-template-name="w-esp actuator">
+   <!-- data-template-name identifies the node type this is for              -->
+
+   <!-- Each of the following divs creates a field in the edit dialog.       -->
+   <!-- Generally, there should be an input for each property of the node.   -->
+   <!-- The for and id attributes identify the corresponding property        -->
+   <!-- (with the 'node-input-' prefix).                                     -->
+   <!-- The available icon classes are defined Twitter Bootstrap glyphicons  -->
+    <div class="form-row">
+       
+	<div class="form-row">
+        <label for="node-input-wesp_type"><i class="fa fa-tasks"></i> Type</label>
+        <select style="width: 60%;" id="node-input-wesp_type">
+			<option value="S">
+				servo
+			</option>
+			<option value="P">
+				led (pwm)
+			</option>
+		</select>
+    </div>
+	<div class="form-row">
+        <label for="node-input-wesp_port"><i class="fa fa-tasks"></i> Port</label>
+		<select style="width: 60%;" id="node-input-wesp_port">
+			<option value="1">
+				Port 1 (analog)
+			</option>
+			<option value="2">
+				Port 2
+			</option>
+			<option value="3">
+				Port 3
+			</option>
+			<option value="4">
+				Port 4
+			</option>
+		</select>
+    </div>
+	
+    <br/>
+    <!-- By convention, most nodes have a 'name' property. The following div -->
+    <!-- provides the necessary field. Should always be the last option      -->
+    <div class="form-row">
+        <label for="node-input-name"><i class="fa fa-tag"></i> Name</label>
+        <input type="text" id="node-input-name" placeholder="Name">
+    </div>
+</script>
+
+
+<!-- Next, some simple help text is provided for the node.                   -->
+<script type="text/x-red" data-help-name="w-esp actuator">
+   <!-- data-help-name identifies the node type this help is for             -->
+   <!-- This content appears in the Info sidebar when a node is selected     -->
+   <!-- The first <p> is used as the pop-up tool tip when hovering over a    -->
+   <!-- node in the palette.                                                 -->
+   <p>This node filters the incoming message, and produces the value of the W-esp-actuator</p>
+   <p>Outputs an object called <b>msg</b> containing <b>msg.topic</b> and
+   <b>msg.payload</b>. msg.payload is a String.</p>
+</script>
+<!-- Finally, the node type is registered along with all of its properties   -->
+<!-- The example below shows a small subset of the properties that can be set-->
+
+<script type="text/javascript">
+function wesp_actuator_generate_name(v_wesp_type, v_wesp_port){
+	if (v_wesp_port == "" || v_wesp_type == ""){
+	return false;
+	}
+	var wesp_types = [];
+	wesp_types["S"] = "servo";
+	wesp_types["P"] = "pwm/led";
+	return wesp_types[v_wesp_type] + " at port " + v_wesp_port;
+}
+RED.nodes.registerType('w-esp actuator',{
+        category: 'output',      // the palette category
+		color: '#FFFF00',
+		align: "right",
+        defaults: {             // defines the editable properties of the node
+            name: {value:""},   //  along with default values.
+            topic: {value:""},
+			wesp_type: {value:"",required:true},
+			wesp_port: {value:"",required:true}
+        },
+        inputs:1,               // set the number of inputs - only 0 or 1
+        outputs:1,              // set the number of outputs - 0 to n
+        // set the icon (held in icons dir below where you save the node)
+        icon: "w-esp_tool.png",     // saved in  icons/myicon.png
+        label: function() {     // sets the default label contents
+			
+            return this.name||this.topic||wesp_actuator_generate_name(this.wesp_type,this.wesp_port)||"undefined actuator";
+        },
+        labelStyle: function() { // sets the class to apply to the label
+            return this.name?"node_label_italic":"";
+        }
+    });
+	
+
+</script>
