@@ -1,0 +1,275 @@
+<head>
+<link href="style.css" rel="stylesheet" type="text/css" media="all" />
+<link href="jquery.toastmessage.css" rel="stylesheet" type="text/css" media="all" />
+<link rel="stylesheet" href="jquery.switchButton.css">
+</head>
+<body>
+<div id="right" style="position:relative">
+
+<div class="esp">
+
+	<!--
+<div style="
+    width: 100px;
+    height: 200px;
+"></div>
+<div  style="
+	width: 265px;
+	height: 200px;
+	background-image: url('cloud.png');
+">
+<div class="cloud_input" style="
+	width: 100px;
+	height: 100px;
+	margin-left: 82.5px;
+	margin-top: 75px;
+	">
+	</div>
+
+</div>-->
+<br />
+<div style="
+    width: 100px;
+    height: 31px;
+"></div><div style="
+    width: 47px;
+    height: 31px;
+    background-color: lightgray;
+"></div><div style="
+    width: 171px;
+    height: 31px;
+    background-color: black;
+		background-image: url('ports-06.png');
+"></div><div style="
+    width: 47px;    height: 31px;    background-color: lightgray;
+"></div><div style="
+    width: 100px;    height: 31;    background-color: white;
+    /* display: block; */
+"></div><br /><div class="input_field port_0 accept_analog" data-port="1" style="
+    width: 100px;
+    height: 100px;
+"></div><div style="
+    width: 32px;
+    height: 100px;
+    background-color: 00AEEF;
+	background-image: url('ports-01.png');
+"></div><div style="
+    width: 202px;
+    height: 100px;
+    background-color: lightgrey;
+"></div><div  style="
+    height: 100px;
+    width: 31px;
+    background-color: F15A29;
+		background-image: url('ports-03.png');
+"></div><div class="input_field port_2 accept_digital" data-port="3" style="
+    width: 100px;
+    height: 100px;
+"></div><br><div style="
+    width: 100px;
+    height: 63px;
+"></div><div style="
+    width: 265px;
+    height: 63px;
+    background-color: lightgrey;
+"></div><div style="
+    width: 100px;    height: 63px;
+"></div><br>
+  <div class="input_field port_1 accept_digital" data-port="2" style="
+    /* display: block; */
+    width: 100px;
+    height: 100px;
+
+"></div><div  style="
+    width: 32px;
+    height: 100px;
+    background-color: #2BB673;
+		background-image: url('ports-02.png');
+"></div><div style="
+    width: 202px;
+    height: 100px;
+    background-color: lightgrey;
+"></div><div  style="
+    height: 100px;
+    width: 31px;
+    background-color: #FBB040;
+	background-image: url('ports-04.png');
+"></div><div class="input_field port_3 accept_digital"  data-port="4" style="
+    width: 100px;
+    height: 100px;
+"></div><br>
+  <div style="
+    width: 100px;
+    height: 31;
+"></div><div style="
+    width: 94px;
+    height: 31px;
+    background-color: lightgray;
+"></div><div style="
+    width: 77px;
+    height: 31px;
+	background-image: url('ports-05.png');
+"></div><div style="
+    width: 94px;    height: 31px;    background-color: lightgray;
+"></div><div style="
+    width: 100px;    height: 31;    background-color: white;
+    /* display: block; */
+"></div>
+<div class="mobile" >
+	<div style="background-image:url(mobile/mobile_01.png); position:absolute; left:0px; top:0px; width:265px; height:34px;" title="">
+	</div>
+	<div style="background-image:url(mobile/mobile_02.png); position:absolute; left:0px; top:34px; width:265px; height:19px;" title="">
+	</div>
+	<div style="background-image:url(mobile/mobile_03.png); position:absolute; left:0px; top:53px; width:80px; height:100px;" title="">
+	</div>
+	<div style=" position:absolute; left:80px; top:53px; width:101px; height:100px;" class="input_field mobile_1 accept_mobile" title="">
+	</div>
+	<div style="background-image:url(mobile/mobile_05.png); position:absolute; left:181px; top:53px; width:84px; height:100px;" title="">
+	</div>
+	<div style="background-image:url(mobile/mobile_06.png); position:absolute; left:0px; top:153px; width:265px; height:41px;" title="">
+	</div>
+	<div style="background-image:url(mobile/mobile_07.png); position:absolute; left:0px; top:194px; width:80px; height:101px;" title="">
+	</div>
+	
+	<div style=" position:absolute; left:80px; top:194px; width:101px; height:101px; background-color: #29ABE2;" title="">
+	</div><!-- class="input_field mobile_2 accept_mobile" -->
+	<div style="background-image:url(mobile/mobile_09.png); position:absolute; left:181px; top:194px; width:84px; height:101px;" title="">
+	</div>
+	<div style="background-image:url(mobile/mobile_10.png); position:absolute; left:0px; top:295px; width:265px; height:105px;" title="">
+	</div>
+	</div>
+</div>
+</div>
+<div id="left">
+<div id="menu"><!--<div class="menuitem usb">
+,<img src="buttons-00.png" /></div>--><div class="menuitem wifi">
+<img src="buttons-01.png" /></div><!--<div class="menuitem cloud">
+<img src="buttons-04.png" /></div>--><div class="menuitem input">
+<img src="buttons-02.png" /></div><div class="menuitem output">
+<img src="buttons-03.png" /></div>
+</div>
+<div class="left_content wifi_content">
+<div class="setting_block setting_block_usb">
+<p>
+Connect the W-esp using an USB cable and select the communication port
+</p>
+<label for="connection_port">Communication port:</label><select style="width:200px;" id="serial_ports"></select>
+<p>
+<button class="settings">Connect</button>
+<button class="connect">Disconnect</button><br />
+</p>
+<div class="status status_usb">No connection found...</div>
+</div>
+<div class="setting_block setting_block_wifi">
+<p>
+Connect to cloud serivces to make your w-esp communicate with others.
+</p>
+<label for="ssid">Wifi network name:</label>
+<input id="ssid" type="text" /><br />
+<label for="password">Wifi password:</label>
+<input id="password" type="text" /><br />
+<p>
+<button class="refresh debug">Get settings</button>
+<button class="command debug">Get status</button>
+<button class="settings">Change settings</button>
+<button class="connect debug">Connect</button><br />
+</p>
+<div class="status status_wifi">No connection found...</div>
+</div>
+
+
+<div class="setting_block setting_block_web">
+<p>
+Select the web service that you want to connect to.</p>
+<p>
+<label for="web_socket_url">Web socket URL</label>
+<input type="text" id="web_socket_url" value="" /><br />
+<label for="web_socket_port">Web socket port</label>
+<input type="text" id="web_socket_port" value="80" />
+</p>
+<p>
+<button class="websocket_settings">Change settings</button>
+</p>
+<div class="status status_websocket">No connection found...</div>
+</div>
+</div>
+<div class="left_content input_content" style="display:none;">
+<div class="top">
+<p>
+Connect to input devices to get to know the world around you.
+</p>
+
+<div class="type_block">
+<img src="block_options-01.png" />
+<div class="tool_box"><img src="potmeter.png" class="tool_sensor tool_analog " id="t0" data-type="0" data-sensor="true" /><span class="tool_text">Analog sensor</span></div>
+<div class="tool_box"><img src="button.png" class="tool_sensor tool_digital " id="t2"data-type="2" data-sensor="true" /><span class="tool_text">Digital sensor</span></div>
+</div>
+<div class="type_block">
+<img src="block_options-02.png" />
+<div class="tool_box"><img src="led.png" class="tool_actuator tool_digital " id="t1" data-type="1" data-actuator="true" /><span class="tool_text">LED light</span></div>
+<div class="tool_box"><img src="servo.png" class="tool_actuator tool_digital " id="t3" data-type="3" data-actuator="true" /><span class="tool_text">Servo motor</span></div>
+</div>
+<div class="type_block">
+<img src="block_options-03.png" />
+<div class="tool_box">
+<img src="mobile-01.png" class="tool_mobile " id="t51" data-type="P" data-actuator="true" />
+<span class="tool_text">Pushbutton</span></div>
+<div class="tool_box">
+<img src="mobile-02.png" class="tool_mobile " id="t52" data-type="S" data-actuator="true" />
+<span class="tool_text">Switch</span></div>
+<div class="tool_box">
+<img src="mobile-03.png" class="tool_mobile " id="t53" data-type="X" data-actuator="true" />
+<span class="tool_text">X rotation</span></div>
+<div class="tool_box">
+<img src="mobile-04.png" class="tool_mobile " id="t54" data-type="Y" data-actuator="true" />
+<span class="tool_text">Y rotation</span></div>
+
+</div>
+</div>
+
+</div>
+<div class="left_content output_content" style="display: none;">
+<div class="out_block">
+<p>By opening node-red you can really start building your system, in the box below the start nodes are shown, they are copied to your clipboard so you can import them in node-red.</p>
+<textarea style="width: 100%; height: 10%;" id="select-nodes">
+</textarea>
+<button class="export-node-red">Launch Node-red</button>
+</div>
+<div class="out_block">
+<p>By scanning the QR code below you can start using your phone, keep in mind that you have to re-scan when you change elements in the drag and drop system.</p>
+<div id="mobile_qr"></div>
+</div>
+</div>
+</div>
+
+<div class="left_content cloud_content" style="display:none;">
+<button class="node-red">Connect to node-red</button>
+<p>
+Connect to cloud serivces to make your w-esp communicate with others.
+
+</p>
+<img src="node-red.png" class="tool_cloud" data-type="1" />
+<img src="thingspeak.png" class="tool_cloud" data-type="3" />
+</div>
+
+
+<div class="bottom" id="buffer">
+</div>
+<div style="" class="state">Connected to W-ESP module on COM18</div>
+<div id="box"></div>
+<div id="screen"></div>
+<script src="jquery.js"></script>
+<script src="jquery.qrcode.js"></script>
+<script src="export.js"></script>
+<script src="dotimeout.js"></script>
+<script src="jquery-ui.min.js"></script>
+<script src="jquery-ui.min.css"></script>
+<script src="functions.js"></script>
+<script src="purl.js"></script>
+<script src="main.js"></script>
+<script src="jquery.toastmessage.js"></script>
+<script src="lunar.min.js"></script>
+<script src="jquery.switchButton.js"></script>
+
+
+</body>
