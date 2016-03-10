@@ -17,7 +17,7 @@ tmr.alarm(6, 200, 1, function ()
             addDevice(4,ports[4],true)
             tmr.alarm(6,2000,1, function ()
             gpio.write(0,gpio.HIGH)
-                if (keep_alive > 2) then
+                if (keep_alive > 3) then
                     keep_alive = 0
                     ws_close()
                     ws_begin(host,path,port)

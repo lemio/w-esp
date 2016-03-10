@@ -1,2 +1,2 @@
-ssid="Wreetvilla"
-password="yvadiva2"
+ssid="android"
+password="testtest"

@@ -1,3 +1,3 @@
-host = "192.168.0.17"
-path = "/ws/test/"
-port = 1880
+host = "iot-wesp.mybluemix.net"
+path = "/ws/"
+port = 80

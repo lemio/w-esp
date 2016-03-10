@@ -33,7 +33,12 @@ function addDevice(port, deviceType)
     elseif  (deviceType == 2) then
     -- DIGITAL INPUT
     gpio.mode(ports_to_pin[port],gpio.INT, gpio.PULLUP)
-    gpio.trig(ports_to_pin[port], "up", function(level) ws_send("D" .. port .. "" .. level) end)
+    gpio.trig(ports_to_pin[port], "both", function(level) if (level == 0) then
+                                            ws_send("D" .. port .. "1")
+                                            else
+                                            ws_send("D" .. port .. "0")
+                                            end
+                                            end)
     --gpio.trig(ports_to_pin[port], "up"  , ws_send("D" .. port .. "1"))
     elseif  (deviceType == 3) then
     -- SERVO OUTPUT

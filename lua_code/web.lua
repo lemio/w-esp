@@ -1,19 +1,26 @@
 ws_receive = function(conn, pl) 
-    --print (pl)
+    print (pl)
     if not (pl == nil) then
       local ports_to_pin = {4,3,2,1}
-      print("1: " .. string.byte(pl,1))
-      print("2: " .. string.byte(pl,2))
+      --print("1: " .. string.byte(pl,1))
+      --print("2: " .. string.byte(pl,2))
       if (string.byte(pl,1) == 138) then
         keep_alive = 0
         gpio.write(0,gpio.LOW)
         print("kept_alive")
       end
       local value =  string.sub(pl,3)
+      if not (value == nil) then
+        print ("value:" .. value)
+      end
       local type = string.sub(value,1,1)
       local port = tonumber(string.sub(value,2,2))
       local payload = string.sub(value,3,-1)
-      --print (type .. " servo.position(" .. port .. "," .. payload ..")")
+      if not (port == nil) then
+      if not (payload == nil) then
+      print (type .. " servo.position(" .. port .. "," .. payload ..")")
+      end
+      end
       local num = tonumber (payload)
       if not (num == nil) then
         if (type=="P") then
@@ -29,33 +36,45 @@ range = function(val,v_max)
 end
 --f.e. ws_begin("echo.websocket.org","/",80)
 ws_begin = function(host,path,port)
-    
+    print (host .. ":" .. port .. path  )
     conn=net.createConnection(net.TCP, false) 
+    
     if (tonumber(string.sub(host,-1)) == nil) then
         print("FINDING DNS")
         conn:dns(host,ws_start) 
     else
+       
         print("IP ADRES")
+        
         ws_start(conn, host)
     end
 end
 ws_start = function(conn,ip)
-    conn:on("receive", ws_receive )
+    conn:connect(port,ip);
     print(ip)
-    if conn:connect(port,ip) then
-        print ("connected")
-    else
-        print ("not connected")
-    end
+    conn:on("connection", function(conn, c) 
+    print ("connected");
+    print ("GET "..path.." HTTP/1.1\r\n"..
+    "Host:  "..host.."\r\n"..
+    "Upgrade: websocket\r\n"..
+    "Connection: Upgrade\r\n"..
+    "Sec-WebSocket-Key: dGhlIHNhbXBsZSBub25jZQ==\r\n"..
+    "Sec-WebSocket-Protocol: chat\r\n"..
+    "Sec-WebSocket-Version: 13\r\n"..
+    "Origin: http://lemio.nl"..
+    "\r\n\r\n");
     conn:send("GET "..path.." HTTP/1.1\r\n"..
     "Host:  "..host.."\r\n"..
     "Upgrade: websocket\r\n"..
     "Connection: Upgrade\r\n"..
-    "Sec-WebSocket-Key: x3JJHMbDL1EzLkh9GBhXDw==\r\n"..
+    "Sec-WebSocket-Key: dGhlIHNhbXBsZSBub25jZQ==\r\n"..
     "Sec-WebSocket-Protocol: chat\r\n"..
     "Sec-WebSocket-Version: 13\r\n"..
-    "Origin: esp".. node.chipid()..
+    "Origin: http://lemio.nl"..
     "\r\n\r\n")
+    end )
+    conn:on("receive", ws_receive )
+    
     end
 --conn:send(string.char(129,08) .. "MESSAGE1");
 ws_keep_alive = function()
