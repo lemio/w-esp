@@ -29,51 +29,51 @@ https://github.com/4refr0nt/ESPlorer
 | SERVO_OUTPUT    |           3|
 
 
-**deleteDevice (port (port on the w-esp 1-4; integer), deviceType (type of device 0-3; integer)**
+**deleteDevice** (port (port on the w-esp 1-4; integer), deviceType (type of device 0-3; integer)
 
 Deletes the device, disable the pwm/trigger/analog behavior
 
-**addDevice(port (port on the w-esp 1-4; integer), deviceType (type of device 0-3; integer)**
+**addDevice** (port (port on the w-esp 1-4; integer), deviceType (type of device 0-3; integer)
 
 Adds the device, enables the pwm/trigger/analog behavior 
 
-**getDevices()**
+**getDevices** ()
 
 Prints the current devices connected to the w-esp in this format:
-DEVICES&1&(P1)&2&(P2)&3&(P3)&4&(P4)&
+`DEVICES&1&(P1)&2&(P2)&3&(P3)&4&(P4)&`
 where (Px) is replaced with the deviceType
 
-**setDevices()**
+**setDevices** ()
 
 Save the current global ports variable in the devices.conf.lua file
 
 ### websocket
 
-** ws_recieve (conn (.net connection), payload (string))**
+**ws_recieve** (conn (.net connection), payload (string))
 
 Handle the recieved messages
 
-** range (val; integer, max; integer) **
+**range** (val; integer, max; integer) 
 
 Fit a value within a range from (0 to max)
 
-** ws_begin (host (domain name or IP string), path (string),port (string))**
+**ws_begin** (host (domain name or IP string), path (string),port (string))
 
 Start a .net connection with the host
 
-** ws_start(conn (.net connection), IP (String))**
+**ws_start** (conn (.net connection), IP (String))
 
 Setup a websocket connection with the conn
 
-** ws_keep_alive() **
+**ws_keep_alive** () 
 
 Send ping (keep alive) message; it should give back a pong message (still alive)
 
-** ws_send(msg) **
+**ws_send** (msg) 
 
 Send a websocket message, with a specific content
 
-** ws_close() **
+**ws_close** () 
 
 Close the websocket client
 
