@@ -79,11 +79,66 @@ Close the websocket client
 
 ### settings
 
+**changeWifi** (ssid,password)
+
+Change the wifi network and password
+
+**readWifi** ()
+
+Read the current wifi.conf.lua settings and print those (over the serial port) in this format:
+
+`SSID&(x)&PASS&(x)`
+
+**connectWifi** ()
+
+Connect to the selected wifi network
+
+**changeConnection** (host,path,port)
+
+Change the connection details (for the websocket server)
+
+**readConnection** ()
+
+Read the connection details and print those (over the serial port) in this format:
+
+`HOST&(x)&PATH&(x)&PORT&(x)`
+
+**startConnection** ()
+
+Start a connection with the websocket server
+
+**closeConnection** ()
+
+Close the connection with the websocket server (Not implemented)
+
+
 (All the functions for changing settings from the chrome app, connection and wifi)
 
+## Config files
 
 
-* "ssid" (Where the WIFI password is stored, don't compile this one!)
-* "connection" (Where the connection domain, path and port are, don't compile this one!)
-* "w-esp" 
+### wifi.conf.lua
+
+File with the wifi settings, in this format:
+
+`ssid="nameofssid"
+password="passwordofssid"`
+
+### connection.conf.lua
+
+File with the server settings, in this format:
+
+`host = "my.web.server.com"
+path = "/my/path/for/the/websocket/"
+port = 80`
+
+(host could also be an (local) IP adress)
+
+### devices.conf.lua
+
+File with the devices connected to the w-esp, in this format:
+
+`ports = {-1,-1,-1,-1}`
+
+
 
