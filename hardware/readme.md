@@ -16,7 +16,8 @@ This sticker is printed on a laser-jet printer, they are cut with a knife ;)
 See the fritzing file for the schematic
 
 (with pricing in euro's, estimate)
-| Object           	| EUR|
+
+| Object           	| EU |
 | -----------------	| --:|
 | ESP chip          |8,00|
 | PCB cost          |1,00|
