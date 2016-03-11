@@ -1,9 +1,8 @@
-require "start_stop_functions"
-require "ssid"
-require "connection"
-require "web"
-require "w-esp"
+require "devices"
+require "websocket"
+require "settings"
 keep_alive = 0
+connectWifi()
 tmr.alarm(6, 200, 1, function ()
     if (wifi.sta.status() == 5) then
     gpio.write(0,gpio.HIGH)

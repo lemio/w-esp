@@ -1,25 +1,25 @@
 function changeWifi (ssid,password)
     --Change the wifi SSID and password settings
-    file.remove("ssid.lua");
-    file.open("ssid.lua","w+");
+    file.remove("wifi_conf.lua");
+    file.open("wifi_conf.lua","w+");
     w = file.writeline;
     w("ssid=\""..ssid.."\"");
     w("password=\""..password.."\"");
     file.close();
     end
 function readWifi()
-    dofile("ssid.lua")
+    dofile("wifi_conf.lua")
     print("SSID&"..ssid.."&PASS&"..password);
 end
 function connectWifi()
     wifi.setmode(wifi.STATION)
-    dofile("ssid.lua")
+    dofile("wifi_conf.lua")
     wifi.sta.config(ssid,password)
     wifi.sta.connect()
 end
 function changeConnection(host,path,port)
-    file.remove("connection.lua");
-    file.open("connection.lua","w+");
+    file.remove("connection_conf.lua");
+    file.open("connection_conf.lua","w+");
     w = file.writeline;
     w("host=\""..host.."\"");
     w("path=\""..path.."\"");
@@ -28,13 +28,13 @@ function changeConnection(host,path,port)
 
 end
 function readConnection()
-    dofile("connection.lua")
+    dofile("connection_conf.lua")
     print("HOST&"..host.."&PATH&"..path .."&PORT&"..port);
 
 end
 function startConnection()
     --ws_close()
-    dofile("connection.lua")
+    dofile("connection_conf.lua")
     ws_begin(host,path,port)
 end
 function closeConnection()
