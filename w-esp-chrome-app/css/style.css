@@ -1,3 +1,5 @@
+
+
 .mobile{
   width: 465px;
   height: 400px;
@@ -154,13 +156,12 @@ border-bottom: 2px solid white;
   display: block;
 }
 
-
 .input_active{
-	background-color: black;
+	background-image: url("../img/droppable.png");
 }
 
 .input_hover{
-	background-color: black;
+	background-image: url("../img/hover.png");
 }
 
 .input_drop{
