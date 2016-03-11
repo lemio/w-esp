@@ -18,18 +18,18 @@ See the fritzing file for the schematic
 (with pricing in euro's, estimate)
 | Object           	| Price |
 | ---------------- 	| --:|
-|ESP chip 			|8,00|
-|PCB cost 			|1,00|
-|Connectors 		|0,80|
-|Screw terminals 	|1,00|
-|Casing 			|5,00|
-|servo 				|3.50|
-|led 				|0,50|
-|pushbutton			|0,50|
-|slider				|0,50|
-|Packaging			|2,00|
-|USB cable			|1,00|
-|Other/unexpected	|2,00|
+| ESP chip 			|8,00|
+| PCB cost 			|1,00|
+| Connectors 		|0,80|
+| Screw terminals 	|1,00|
+| Casing 			|5,00|
+| servo 			|3.50|
+| led 				|0,50|
+| pushbutton		|0,50|
+| slider			|0,50|
+| Packaging			|2,00|
+| USB cable			|1,00|
+| Other/unexpected	|2,00|
 
 NodeMCU can for example be found:
 * (http://www.ebay.com/sch/i.html?_from=R40&_trksid=p2050601.m570.l1313.TR0.TRC0.H0.XNodeMCU.TRS0&_nkw=NodeMCU&_sacat=0)
