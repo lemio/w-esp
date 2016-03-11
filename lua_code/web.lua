@@ -24,15 +24,15 @@ ws_receive = function(conn, pl)
       local num = tonumber (payload)
       if not (num == nil) then
         if (type=="P") then
-            pwm.setduty(ports_to_pin[port],range(payload,1023))
+            pwm.setduty(ports_to_pin[port],range(num,1023))
         elseif (type=="S") then
-            pwm.setduty(ports_to_pin[port],40+range(payload,200))
+            pwm.setduty(ports_to_pin[port],40+range(num,200))
         end
       end
    end
 end
 range = function(val,v_max)
-    return math.min(math.max(0,tonumber(val)),v_max)
+	return math.min(math.max(0,val),v_max)
 end
 --f.e. ws_begin("echo.websocket.org","/",80)
 ws_begin = function(host,path,port)
