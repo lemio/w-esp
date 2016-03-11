@@ -121,16 +121,18 @@ Close the connection with the websocket server (Not implemented)
 
 File with the wifi settings, in this format:
 
-`ssid="nameofssid"
-password="passwordofssid"`
+```ini
+ssid="nameofssid"
+password="passwordofssid"```
 
 ### connection.conf.lua
 
 File with the server settings, in this format:
 
-`host = "my.web.server.com"
+```ini
+host = "my.web.server.com"
 path = "/my/path/for/the/websocket/"
-port = 80`
+port = 80```
 
 (host could also be an (local) IP adress)
 
@@ -138,7 +140,8 @@ port = 80`
 
 File with the devices connected to the w-esp, in this format:
 
-`ports = {-1,-1,-1,-1}`
+```ini
+ports = {-1,-1,-1,-1}```
 
 
 
