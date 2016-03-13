@@ -38,7 +38,7 @@ In this way the children can learn about programming concepts, without the need 
 * Larger icons and corresponding color in node-red, also connecting the visual styles of node-red and w-esp more. The w-esp software and the node-red software are still two different things, they should merge to one system node-red should also communicate what is connected to the w-esp hardware.
 * More decent firmware (native c++), the current firmware is based on LUA, because it was easier to write it in LUA. But when moving to production the firmware should be based on c/c++ because then the hardware could be used optimal and memory issues are history.
 * Integration with other (flow chart/data logging) online services, for example If this than that (a cloud service for connecting different application programming interfaces with each other and Thingspeak (data logging service).
-* More solid (and less open) course material, based on the feedback from Frank, teachers want to have something to fall back at. Perhaps this could be in combination with inspiration on different design briefs for the teacher.
+* More solid (and less open) course material, teachers want to have something to fall back at. Perhaps this could be in combination with inspiration on different design briefs for the teacher.
 * Focus more on how girls relate to this subject, using textiles/more context/less hands-on.
 * Try to use the hardware that is already in the school (most physics classes have banana connectors and hardware that can be connected with those banana wires.
 * More hardware to connect to the w-esp (and perhaps an advanced toolkit) for example klikaanklikuit remote controlled relays, distance sensors, speakers, light sensor, temperature sensor, touch sensor.
