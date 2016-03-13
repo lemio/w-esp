@@ -117,6 +117,7 @@ $(".export-node-red").click(function() {
     document.execCommand('copy');
     //sandbox.val('');
     document.execCommand('copy');
+	console.log('/node-red.html?web=' + encodeURIComponent("http://" + host + ":" + port));
     var test = window.chrome.app.window.create('node-red.html?web=' + encodeURIComponent("http://" + host + ":" + port), {
         state: "maximized"
     }, function(createdWindow) {
@@ -225,7 +226,6 @@ connection.onReadLine.addListener(function(line) {
     console.log(line);
 	//Check it for all the possible commands/respones on queries
     check_for_ssid(line);
-    check_for_password(line);
     check_for_status(line);
     check_for_websocket_connection(line);
     check_for_connection(line);
